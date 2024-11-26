@@ -1,0 +1,149 @@
+@startuml
+
+object "<u>charH:Character</u>" as ch {
+    character = 'H'
+    font = "Arial"
+    color = "Black"
+    size = 16
+}
+
+object "<u>charE:Character</u>" as ce {
+    character = 'e'
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>charL1:Character</u>" as cl1 {
+    character = 'l'
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>charL2:Character</u>" as cl2 {
+    character = 'l'
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>charO:Character</u>" as co {
+    character = 'o'
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>charW:Character</u>" as cw {
+    character = 'W'
+    font = "Arial"
+    color = "Black"
+    size = 16
+}
+
+object "<u>charR:Character</u>" as cr {
+    character = 'r'
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>charD:Character</u>" as cd {
+    character = 'd'
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>charC:Character</u>" as cc {
+    character = 'C'
+    font = "Verdana"
+    color = "Blue"
+    size = 18
+}
+
+object "<u>charS:Character</u>" as cs {
+    character = 'S'
+    font = "Verdana"
+    color = "Blue"
+    size = 18
+}
+
+object "<u>char5:Character</u>" as c5 {
+    character = '5'
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object "<u>char8:Character</u>" as c8 {
+    character = '8'
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object "<u>char0_1:Character</u>" as c01 {
+    character = '0'
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object "<u>char0_2:Character</u>" as c02 {
+    character = '0'
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object "<u>propArial16:CharacterProperties</u>" as pa16 {
+    font = "Arial"
+    color = "Black"
+    size = 16
+}
+
+object "<u>propArial14:CharacterProperties</u>" as pa14 {
+    font = "Arial"
+    color = "Black"
+    size = 14
+}
+
+object "<u>propVerdana18:CharacterProperties</u>" as pv18 {
+    font = "Verdana"
+    color = "Blue"
+    size = 18
+}
+
+object "<u>propVerdana12:CharacterProperties</u>" as pv12 {
+    font = "Verdana"
+    color = "Red"
+    size = 12
+}
+
+object "<u>factory:CharacterPropertiesFactory</u>" as f {
+    flyweights = {propArial16, propArial14, propVerdana18, propVerdana12}
+}
+object "<u>document:Document</u>" as d {
+    characters = {charH, charE, charL1, charL2, charO, charW, charR, charD, charC, charS, char5, char8, char0_1, char0_2}
+    propertiesFactory = factory
+}
+
+ch --> pa16
+cw --> pa16
+ce --> pa14
+cl1 --> pa14
+cl2 --> pa14
+co --> pa14
+cr --> pa14
+cd --> pa14
+cc --> pv18
+cs --> pv18
+c5 --> pv12
+c8 --> pv12
+c01 --> pv12
+c02 --> pv12
+d --> f
+
+@enduml

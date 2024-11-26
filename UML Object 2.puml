@@ -1,0 +1,150 @@
+@startuml
+
+object "<u>charH:Character</u>" as ch {
+    character = 'H'
+    font = "Calibri"
+    color = "Blue"
+    size = 2
+}
+
+object "<u>charW:Character</u>" as cw {
+    character = 'W'
+    font = "Calibri"
+    color = "Blue"
+    size = 2
+}
+
+object "<u>charE:Character</u>" as ce {
+    character = 'e'
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>charL1:Character</u>" as cl1 {
+    character = 'l'
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>charL2:Character</u>" as cl2 {
+    character = 'l'
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>charO:Character</u>" as co {
+    character = 'o'
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>charR:Character</u>" as cr {
+    character = 'r'
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>charD:Character</u>" as cd {
+    character = 'd'
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>charC:Character</u>" as cc {
+    character = 'C'
+    font = "Verdana"
+    color = "Blue"
+    size = 10
+}
+
+object "<u>charS:Character</u>" as cs {
+    character = 'S'
+    font = "Verdana"
+    color = "Blue"
+    size = 10
+}
+
+object "<u>char5:Character</u>" as c5 {
+    character = '5'
+    font = "New Time Romance"
+    color = "Red"
+    size = 12
+}
+
+object "<u>char8:Character</u>" as c8 {
+    character = '8'
+    font = "New Time Romance"
+    color = "Red"
+    size = 12
+}
+
+object "<u>char0_1:Character</u>" as c01 {
+    character = '0'
+    font = "New Time Romance"
+    color = "Red"
+    size = 12
+}
+
+object "<u>char0_2:Character</u>" as c02 {
+    character = '0'
+    font = "New Time Romance"
+    color = "Red"
+    size = 12
+}
+
+object "<u>propCalibri2:CharacterProperties</u>" as pc2 {
+    font = "Calibri"
+    color = "Blue"
+    size = 2
+}
+
+object "<u>propArial8:CharacterProperties</u>" as pa8 {
+    font = "Arial"
+    color = "Black"
+    size = 8
+}
+
+object "<u>propVerdana10:CharacterProperties</u>" as pv10 {
+    font = "Verdana"
+    color = "Blue"
+    size = 10
+}
+
+object "<u>propNewTimeRomance12:CharacterProperties</u>" as pnr12 {
+    font = "New Time Romance"
+    color = "Red"
+    size = 12
+}
+
+object "<u>factory:CharacterPropertiesFactory</u>" as f {
+    flyweights = {propCalibri2, propArial8, propNewTimeRomance12, propVerdana10}
+}
+
+object "<u>document:Document</u>" as d {
+    characters = {charH, charE, charL1, charL2, charO, charW, charR, charD, charC, charS, char5, char8, char0_1, char0_2}
+    propertiesFactory = factory
+}
+
+ch --> pc2
+cw --> pc2
+ce --> pa8
+cl1 --> pa8
+cl2 --> pa8
+co --> pa8
+cr --> pa8
+cd --> pa8
+cc --> pv10
+cs --> pv10
+c5 --> pnr12
+c8 --> pnr12
+c01 --> pnr12
+c02 --> pnr12
+d --> f
+
+@enduml
